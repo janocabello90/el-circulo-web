@@ -494,7 +494,7 @@ html.js .pop.p2{--d:.5s}html.js .pop.p3{--d:.9s}html.js .pop.p4{--d:1.3s}
       <div class="tile grow" style="animation-range:entry 10% entry 55%"><div class="media" style="height:320px;background:#F7F8FB"><img src="assets/mentorias.jpg" alt="Calendario de los viernes" style="object-fit:contain;background:#F7F8FB"></div><div style="padding:32px 40px 40px;display:flex;flex-direction:column;gap:8px"><span class="tile-h">Los viernes a las 12:00</span><p class="copy sm">Tres viernes al mes, dos horas en directo: uno con Álex y Jano, otro con un experto invitado y el Espacio Neurona para hablar en comunidad.</p></div></div>
       <div class="tile grow"><div class="media" style="height:320px;background:#F7F8FB"><img src="assets/herramientas.jpg" alt="Hub de Herramientas de la Academia FisioReferentes" style="object-fit:contain;background:#F7F8FB"></div><div style="padding:32px 40px 40px;display:flex;flex-direction:column;gap:8px"><span class="tile-h">Píldoras y herramientas</span><p class="copy sm">Lo útil para tu negocio, en formato corto: marca personal, atención al cliente, gestión de equipo, liderazgo.</p></div></div>
       <div class="tile grow" style="animation-range:entry 10% entry 55%"><div class="media" style="height:320px"><img src="assets/madrid-03.jpg" alt="Comunidad de FisioReferentes"></div><div style="padding:32px 40px 40px;display:flex;flex-direction:column;gap:8px"><span class="tile-h">Comunidad y directorio</span><p class="copy sm">Chat y directorio con cientos de dueños de clínica, por ciudad, especialidad y fase. Encuentra a quien ya resolvió lo que tú tienes delante.</p></div></div>
-      <div class="tile grow"><div class="media" style="height:320px"><img src="assets/fisioexpo-02.jpg" alt="Encuentro presencial de la comunidad"></div><div style="padding:32px 40px 40px;display:flex;flex-direction:column;gap:8px"><span class="tile-h">Encuentros presenciales</span><p class="copy sm">Porque verse en pantalla y conocerse son dos cosas.</p></div></div>
+      <div class="tile grow"><a class="video-frame yt-lite" href="https://www.youtube.com/watch?v=yq6pk-NQRTA" target="_blank" rel="noopener" data-id="yq6pk-NQRTA" data-title="Encuentro de FisioReferentes en el Círculo de Bellas Artes, Madrid 2026" aria-label="Reproducir el vídeo del encuentro en el Círculo de Bellas Artes" style="aspect-ratio:auto;height:320px;border-radius:0;box-shadow:none"><img class="cover" src="assets/evento-bellas-artes.jpg" alt="Encuentro de FisioReferentes en el Círculo de Bellas Artes de Madrid"><span class="scrim"></span><span class="vsl-play" style="width:76px;height:76px"><svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a><div style="padding:32px 40px 40px;display:flex;flex-direction:column;gap:8px"><span class="tile-h">Encuentros presenciales</span><p class="copy sm">Como el de enero de 2026 en el Círculo de Bellas Artes de Madrid. Porque verse en pantalla y conocerse son dos cosas.</p></div></div>
       <div data-plz-bonus class="tile grow keep-media" style="background:#C8362A;color:#fff;box-shadow:0 30px 70px rgba(200,54,42,0.28);animation-range:entry 10% entry 55%"><div class="media" style="height:320px;background:#F3E6C2"><img src="assets/alex-jano-01.jpg" alt="Álex y Jano" style="object-fit:contain;background:#F3E6C2"></div><div style="padding:32px 40px 40px;display:flex;flex-direction:column;gap:12px"><span style="display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:8px 14px;border-radius:999px;background:#fff;color:#C8362A;font-size:13px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase"><span class="live" style="width:8px;height:8px;border-radius:50%;background:#C8362A"></span>Solo los 50 primeros</span><span class="tile-h" style="color:#fff">Sesión 1:1 con Álex o Jano</span><p class="copy sm" style="color:rgba(255,255,255,0.92)">Álex o Jano mira tu caso concreto y te dice por dónde empezar. Cuando se acaben las 50, no vuelve.</p></div></div>
     </div>
   </div>
@@ -627,6 +627,18 @@ html.js .pop.p2{--d:.5s}html.js .pop.p3{--d:.9s}html.js .pop.p4{--d:1.3s}
 </div>
 
 <script>
+document.querySelectorAll('.yt-lite').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.id+'?autoplay=1&rel=0&modestbranding=1';
+    f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; web-share; fullscreen');
+    f.setAttribute('allowfullscreen','');
+    f.title=a.dataset.title||'Vídeo';
+    a.innerHTML='';
+    a.appendChild(f);
+  });
+});
 (function(){
   var a=document.getElementById('vsl');
   if(!a)return;
