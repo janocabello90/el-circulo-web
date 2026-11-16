@@ -171,6 +171,53 @@ html.js .pop.p2{--d:.5s}html.js .pop.p3{--d:.9s}html.js .pop.p4{--d:1.3s}
   .hero-sub{font-size:30px!important}
   .pill{white-space:normal;text-align:center;line-height:1.2}
 }
+/* Testimonios */
+.t-hero{background:#F5F6F9}
+.t-body{padding:36px 40px 40px;display:flex;flex-direction:column;gap:16px}
+.t-fig{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:4px}
+.t-big{font-size:96px;line-height:.92;font-weight:700;letter-spacing:-.055em}
+.t-unit{font-size:24px;font-weight:600;color:#4F5F70;letter-spacing:-.02em}
+.t-sub{margin:-6px 0 0;font-size:24px;line-height:1.2;font-weight:700;letter-spacing:-.02em;color:#0B1F38}
+.ba{display:flex;flex-direction:column;border-radius:18px;background:#fff;overflow:hidden;margin-top:6px}
+.ba-row{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:10px;padding:11px 18px;align-items:baseline;border-top:1px solid rgba(11,31,56,.08);font-size:15px;line-height:1.3}
+.ba-row .k{color:#0B1F38;font-weight:600}.ba-row .a{text-align:right;color:#6B7A8A}.ba-row .b{text-align:right;font-weight:700;color:#A97E22}
+.ba-head{border-top:0;padding:12px 18px 6px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:700}
+.ba-head .a{color:#8A97A6}
+.t-remate{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:18px;background:#FDECEA;color:#7A1F17;font-size:15px;line-height:1.35}
+.t-remate-n{font-size:40px;font-weight:700;letter-spacing:-.04em;color:#C8362A;flex:none}
+.t-remate b{color:#B42318}
+.t-quote{margin:6px 0 0;font-size:24px;line-height:1.25;font-weight:700;letter-spacing:-.02em;color:#0B1F38}
+.t-type{background:#0B1F38;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center}
+.t-type-a{font-size:44px;font-weight:600;letter-spacing:-.03em;color:rgba(255,255,255,.4);text-decoration:line-through;text-decoration-thickness:2px}
+.t-type-b{font-size:120px;line-height:.95;font-weight:700;letter-spacing:-.06em;background:linear-gradient(135deg,#E6C468 0%,#D4A843 42%,#A97E22 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.t-type-l{margin-top:8px;font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+/* placeholder evidente: rayado + borde discontinuo */
+.ph-x{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;color:#5B6B7D;font-size:14px;line-height:1.4;background:repeating-linear-gradient(-45deg,#E9EDF3 0 14px,#DFE5EE 14px 28px);outline:2px dashed #9AA8B8;outline-offset:-14px}
+.ph-x b{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.quote-rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.t-q{margin:0;padding:36px;gap:28px;justify-content:space-between;min-height:260px}
+.t-q blockquote{margin:0;font-size:24px;line-height:1.3;font-weight:600;letter-spacing:-.02em;color:#0B1F38}
+.t-q figcaption{display:flex;align-items:center;gap:12px}
+.t-q figcaption>span:last-child{display:flex;flex-direction:column;gap:2px;font-size:16px}
+.t-q figcaption .fine{font-size:14px}
+.t-av{width:44px;height:44px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;background:linear-gradient(135deg,#E6C468,#A97E22)}
+.t-q-ph blockquote{font-size:17px;font-weight:600;color:#7A8796;font-style:italic;letter-spacing:0}
+@media (max-width:900px){
+  .quote-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .quote-rail::-webkit-scrollbar{display:none}
+  .quote-rail>.t-q{flex:0 0 84%;scroll-snap-align:center}
+}
+@media (max-width:600px){
+  .t-body{padding:24px 22px 28px;gap:12px}
+  .t-big{font-size:64px}.t-unit{font-size:19px}.t-sub{font-size:20px}
+  .ba-row{font-size:12.5px;padding:10px 12px;gap:6px;grid-template-columns:1.15fr .85fr 1fr}
+  .ba-head{font-size:9.5px;letter-spacing:.04em}
+  .t-remate{gap:12px;padding:14px}.t-remate-n{font-size:32px}
+  .t-hero .ph-x,.t-hero .t-photo,.t-hero .t-type{height:220px!important}
+  .t-type-b{font-size:84px}.t-type-a{font-size:32px}
+  .t-quote{font-size:20px}
+  .t-q{padding:24px;min-height:0}.t-q blockquote{font-size:20px}
+}
 </style>
 </head>
 <body>
@@ -334,39 +381,71 @@ html.js .pop.p2{--d:.5s}html.js .pop.p3{--d:.9s}html.js .pop.p4{--d:1.3s}
   </div>
 </section>
 
-<!-- FER Y DEISY -->
-<section style="padding:140px 0">
+<!-- TESTIMONIOS -->
+<section id="testimonios" style="padding:140px 0">
   <div class="wrap" style="display:flex;flex-direction:column;gap:56px;align-items:center">
-    <h2 class="sec-h sm reveal" style="text-align:center;max-width:900px">Dos alumnos que miraron sus números. <span class="grad">Y cambiaron su clínica.</span></h2>
-    <div class="grid2" style="width:100%">
-      <div class="tile grow">
-        <div class="ph" style="height:380px">[Clip Fer · 15 s]</div>
-        <div style="padding:40px;display:flex;flex-direction:column;gap:24px">
-          <div style="display:flex;flex-direction:column;gap:8px"><span class="eyebrow">Fer · 15 años con la clínica</span><p class="copy sm">Cuarenta horas de camilla, agenda llena, 1.800 € al mes. Siete euros de margen por servicio.</p></div>
-          <div style="display:flex;flex-direction:column;border-radius:18px;background:#ffffff;overflow:hidden">
-            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;padding:12px 20px;align-items:center"><span class="fine"></span><span class="fine" style="text-align:right">Antes</span><span class="fine" style="text-align:right;color:#A97E22">Después</span></div>
-            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;padding:14px 20px;align-items:center;border-top:1px solid rgba(11,31,56,0.08)"><span class="copy sm" style="color:#0B1F38;font-weight:600">Horas de consulta a la semana</span><span style="text-align:right;font-size:24px;font-weight:600;color:#6B7A8A;letter-spacing:-0.02em">40</span><span class="grad" style="text-align:right;font-size:32px;font-weight:700;letter-spacing:-0.03em">18</span></div>
-            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;padding:14px 20px;align-items:center;border-top:1px solid rgba(11,31,56,0.08)"><span class="copy sm" style="color:#0B1F38;font-weight:600">Equipo</span><span style="text-align:right;font-size:24px;font-weight:600;color:#6B7A8A;letter-spacing:-0.02em">2 a media jornada</span><span class="grad" style="text-align:right;font-size:32px;font-weight:700;letter-spacing:-0.03em">4 a jornada completa</span></div>
-            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;padding:14px 20px;align-items:center;border-top:1px solid rgba(11,31,56,0.08)"><span class="copy sm" style="color:#0B1F38;font-weight:600">Lo que se lleva al mes</span><span style="text-align:right;font-size:24px;font-weight:600;color:#6B7A8A;letter-spacing:-0.02em">1.800 €</span><span class="grad" style="text-align:right;font-size:32px;font-weight:700;letter-spacing:-0.03em">casi el doble</span></div>
-          </div>
-          <p class="copy lg" style="font-size:21px">«Cada año me gastaba miles de euros en formación de fisioterapia y cero en gestión.»</p>
-        </div>
-      </div>
-      <div class="tile grow" style="animation-range:entry 10% entry 55%">
-        <div class="ph" style="height:380px">[Clip Deisy · 15 s]</div>
-        <div style="padding:40px;display:flex;flex-direction:column;gap:24px">
-          <div style="display:flex;flex-direction:column;gap:8px"><span class="eyebrow">Deisy · suelo pélvico, tres personas</span><p class="tile-h" style="font-size:32px">Menos pacientes. Más dinero.</p></div>
-          <div style="display:flex;flex-direction:column;border-radius:18px;background:#ffffff;overflow:hidden">
-            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;padding:12px 20px;align-items:center"><span class="fine"></span><span class="fine" style="text-align:right">Antes</span><span class="fine" style="text-align:right;color:#A97E22">Después</span></div>
-            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;padding:14px 20px;align-items:center;border-top:1px solid rgba(11,31,56,0.08)"><span class="copy sm" style="color:#0B1F38;font-weight:600">Sesiones al año</span><span style="text-align:right;font-size:24px;font-weight:600;color:#6B7A8A;letter-spacing:-0.02em">2.220</span><span class="grad" style="text-align:right;font-size:32px;font-weight:700;letter-spacing:-0.03em">1.730</span></div>
-            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;padding:14px 20px;align-items:center;border-top:1px solid rgba(11,31,56,0.08)"><span class="copy sm" style="color:#0B1F38;font-weight:600">Facturación al año</span><span style="text-align:right;font-size:24px;font-weight:600;color:#6B7A8A;letter-spacing:-0.02em">87.000 €</span><span class="grad" style="text-align:right;font-size:32px;font-weight:700;letter-spacing:-0.03em">100.000 €</span></div>
-            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;padding:14px 20px;align-items:center;border-top:1px solid rgba(11,31,56,0.08)"><span class="copy sm" style="color:#0B1F38;font-weight:600">Jornada</span><span style="text-align:right;font-size:24px;font-weight:600;color:#6B7A8A;letter-spacing:-0.02em">Partida</span><span class="grad" style="text-align:right;font-size:32px;font-weight:700;letter-spacing:-0.03em">Intensiva</span></div>
-          </div>
-          <p class="copy lg" style="font-size:21px">«Era un autoempleo que me ahogaba.»</p>
-        </div>
-      </div>
+
+    <div class="reveal" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+      <h2 class="sec-h" style="max-width:960px">No hace falta hacerla grande. <span class="grad">Hace falta que te deje dinero.</span></h2>
     </div>
-    <p class="fine reveal" style="max-width:760px;text-align:center">Fer y Deisy hicieron nuestro programa de acompañamiento, no El Círculo. A los dos les cambió la vida el mismo primer paso: mirar sus números con alguien que ya había hecho el camino. Ese paso es el que das aquí.</p>
+    <div class="grid2 t-heroes" style="width:100%">
+      <article class="tile grow t-hero">
+        <div class="media t-photo" style="height:300px"><img src="assets/fer.jpg" alt="Fer en su clínica" style="object-position:70% 50%"></div>
+        <div class="t-body">
+          <span class="eyebrow">Fer · 15 años con su clínica</span>
+          <div class="t-fig"><span class="t-big grad">+2.300 €</span></div>
+          <p class="t-sub">al mes, y la mitad de horas de consulta.</p>
+          <p class="copy sm">Intentó traspasar la clínica por 40.000 € y le dijeron que no. Contrató más gente y ganó el doble, porque antes arregló el precio.</p>
+          <div class="ba">
+            <div class="ba-row ba-head"><span></span><span class="a">Antes</span><span class="b">Previsión 2026</span></div>
+            <div class="ba-row"><span class="k">Facturación</span><span class="a">144.000 €</span><span class="b">~340.000 €</span></div>
+            <div class="ba-row"><span class="k">Sus horas de consulta</span><span class="a">40 h/sem</span><span class="b">18-20 h/sem</span></div>
+            <div class="ba-row"><span class="k">Equipo, además de él</span><span class="a">2 a media jornada</span><span class="b">4 a jornada completa</span></div>
+            <div class="ba-row"><span class="k">Lo que se lleva</span><span class="a">1.800 €/mes</span><span class="b">3.500 €/mes + colchón</span></div>
+          </div>
+          <div class="t-remate"><span class="t-remate-n">7 €</span><span><b>de margen por servicio, con la agenda llena.</b> Llenar la agenda no era el problema.</span></div>
+          <p class="t-quote">«Además de fisios, somos empresarios.»</p>
+        </div>
+      </article>
+      <article class="tile grow t-hero" style="animation-range:entry 10% entry 55%">
+        <div class="t-type" style="height:300px" aria-hidden="true">
+          <span class="t-type-a">2.220</span>
+          <span class="t-type-b">1.730</span>
+          <span class="t-type-l">sesiones al año</span>
+        </div>
+        <div class="t-body">
+          <span class="eyebrow">Deisy · suelo pélvico, equipo de tres</span>
+          <div class="t-fig"><span class="t-big grad">+13.000 €</span></div>
+          <p class="t-sub">al año, con casi 500 sesiones menos.</p>
+          <p class="copy sm">Para el que mira a Fer y piensa «yo soy más pequeño» o «yo no quiero crecer». Deisy no creció: cobró lo que vale.</p>
+          <div class="ba">
+            <div class="ba-row ba-head"><span></span><span class="a">Antes</span><span class="b">Previsión 2026</span></div>
+            <div class="ba-row"><span class="k">Facturación</span><span class="a">87.000 €</span><span class="b">100.000 €</span></div>
+            <div class="ba-row"><span class="k">Sesiones al año</span><span class="a">2.220</span><span class="b">1.730</span></div>
+            <div class="ba-row"><span class="k">Ingreso medio por sesión</span><span class="a">~39 €</span><span class="b">~58 €</span></div>
+            <div class="ba-row"><span class="k">Sus horas de consulta</span><span class="a">36 h, partida</span><span class="b">28-30 h, intensiva</span></div>
+            <div class="ba-row"><span class="k">Equipo</span><span class="a">3</span><span class="b">3</span></div>
+          </div>
+          <p class="t-quote">«Era un autoempleo que me ahogaba.»</p>
+        </div>
+      </article>
+    </div>
+    <div class="quote-rail" style="width:100%">
+      <figure class="tile grow t-q">
+        <blockquote>«Me ha dado una hoja de ruta… y tener más tiempo para mí.»</blockquote>
+        <figcaption><span class="t-av" aria-hidden="true">S</span><span><b>Sergio</b><span class="fine">Andalucía</span></span></figcaption>
+      </figure>
+      <figure class="tile grow t-q" style="animation-range:entry 10% entry 55%">
+        <blockquote>«Animo a todo el mundo…»</blockquote>
+        <figcaption><span class="t-av" aria-hidden="true">P</span><span><b>Paz</b><span class="fine">Vigo</span></span></figcaption>
+      </figure>
+      <figure class="tile grow t-q" style="animation-range:entry 20% entry 65%">
+        <blockquote>«Recomiendo a todo el mundo que lo haga, porque le va a cambiar la forma de pensar… estáis tardando.»</blockquote>
+        <figcaption><span class="t-av" aria-hidden="true">C</span><span><b>Chema</b><span class="fine">Benidorm</span></span></figcaption>
+      </figure>
+    </div>
+    <p class="fine reveal" style="max-width:760px;text-align:center">Estos resultados son de alumnos de nuestros programas de mentoría y acompañamiento. El Círculo es la puerta de entrada a ese mismo entorno.</p>
+
     <div class="cta-red reveal"><a href="#precio" class="pill red" style="height:58px;padding:0 34px;font-size:19px">Quiero entrar ahora con mi plaza</a><span class="fine"><span data-plz="full">Solo 50 plazas con sesión 1:1 con Álex o Jano</span> · Hasta el 27 de noviembre</span></div>
   </div>
 </section>
@@ -580,7 +659,7 @@ html.js .pop.p2{--d:.5s}html.js .pop.p3{--d:.9s}html.js .pop.p4{--d:1.3s}
 
   // 2 · Contadores (+400, 12, 86.400 €…)
   var counters=[];
-  $$('.stat-n, [data-count]').concat($$('section span').filter(function(s){return !s.children.length && /^\d{1,3}(\.\d{3})+ €$/.test(s.textContent.trim())}))
+  $$('.stat-n, [data-count]').concat($$('section span').filter(function(s){return !s.children.length && !s.closest('.ba') && /^\d{1,3}(\.\d{3})+ €$/.test(s.textContent.trim())}))
   .forEach(function(el){
     if(el.children.length) return;
     var m=el.textContent.trim().match(/^([^\d]*)(\d{1,3}(?:\.\d{3})+|\d+)(.*)$/);
