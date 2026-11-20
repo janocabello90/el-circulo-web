@@ -291,6 +291,23 @@ footer{padding-bottom:96px!important}
   .faq-row{font-size:17px;padding:16px 0}
   .pend{font-size:13px;padding:8px 10px}
 }
+
+.tc-img{width:100%;max-width:880px;height:360px;border-radius:28px;background:#fff}
+.gift{flex-direction:column;padding:0;gap:0}
+.gift-img{height:240px;flex:none;width:100%}
+.gift-body{padding:28px 32px 32px}
+.bono{flex-direction:row;align-items:center;gap:40px}
+.bono-txt{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.bono-img{flex:0 0 380px;height:300px;border-radius:24px;background:#F3E6C2}
+@media (max-width:900px){.bono{flex-direction:column;align-items:stretch}.bono-img{flex:none;height:260px}}
+@media (max-width:600px){
+  .tc-img{height:200px;border-radius:20px}
+  .gift{display:flex;padding:0}
+  .gift-img{height:150px}
+  .gift-body{padding:14px 16px 16px}
+  .gift-t{padding-top:0}
+  .bono-img{height:200px;border-radius:18px}
+}
 </style>
 </head>
 <body>
@@ -314,10 +331,8 @@ footer{padding-bottom:96px!important}
       <span class="buy-price">490 € <span>+ IVA</span></span>
       <a href="https://academia.fisioreferentes.com/register?code=el-circulo" class="pill buy-btn">Quiero Toma el Control</a>
     </div>
-    <!-- VÍDEO: para activarlo, pega la URL de YouTube en data-youtube (p. ej. data-youtube="https://youtu.be/XXXXXXXXXXX"). Vacío = no se enseña vídeo. -->
-    <div id="vsl-slot" data-youtube="" data-title="Toma el Control · Vídeo de Álex Vallés" class="hero-in d5" style="width:100%;max-width:1080px">
-      <p class="pend">[PENDIENTE: VSL nueva de Álex centrada en Toma el Control]</p>
-    </div>
+    <!-- VÍDEO: para cambiarlo, pega la URL de YouTube en data-youtube y, si quieres, la portada en data-cover. Vacío = no se enseña vídeo. -->
+    <div id="vsl-slot" data-youtube="https://www.youtube.com/watch?v=JCgtIEbGhjY" data-cover="assets/vsl-cover.jpg" data-title="Vídeo de Álex Vallés" class="hero-media" style="width:100%;max-width:1080px;margin-top:16px"></div>
   </div>
 </section>
 
@@ -328,6 +343,7 @@ footer{padding-bottom:96px!important}
       <h2 class="sec-h">Un mes para dejar de decidir a ojo.</h2>
       <p class="copy" style="max-width:760px">Toma el Control es un programa de un mes, con principio y fin. Empiezas con una sesión de bienvenida y avanzas por cuatro módulos:</p>
     </div>
+    <div class="media grow tc-img"><img src="assets/numeros.jpg" alt="Panel de Toma el Control con los números de la clínica" style="object-fit:contain;background:#fff"></div>
     <ol class="mods">
       <li class="tile white grow mod"><span class="mod-n grad">1</span><div><span class="mod-t">Por dónde empezamos.</span><p class="copy sm">Qué es un negocio de verdad y por qué decides como decides.</p></div></li>
       <li class="tile white grow mod"><span class="mod-n grad">2</span><div><span class="mod-t">¿Cómo estás hoy?</span><p class="copy sm">Tus números reales: margen, rentabilidad y un panel para verlos.</p></div></li>
@@ -346,10 +362,10 @@ footer{padding-bottom:96px!important}
       <p class="copy" style="max-width:760px">Desde el primer día, no estás solo. Mientras haces Toma el Control ya estás dentro, con 12 meses de acceso a todo esto:</p>
     </div>
     <div class="gifts">
-      <div class="tile grow gift"><span class="gift-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><span class="gift-t">Dos mentorías en directo al mes.</span><p class="copy sm">Traes el problema de tu clínica y te lo llevas resuelto, con Álex, Jano y un experto invitado.</p></div></div>
-      <div class="tile grow gift"><span class="gift-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2.5"/><path d="M10 8.5v5l4-2.5z"/><path d="M7 21h10"/></svg></span><div><span class="gift-t">Cursos y videoteca.</span><p class="copy sm">Formaciones cortas de marca personal, equipo, atención al paciente y liderazgo, con material nuevo cada trimestre.</p></div></div>
-      <div class="tile grow gift"><span class="gift-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 19c0-3.3 2.9-5.5 6.5-5.5s6.5 2.2 6.5 5.5"/><path d="M15 14.5c3 0 6 1.5 6 4.5"/></svg></span><div><span class="gift-t">Comunidad de unos 180 fisios dueños de clínica.</span><p class="copy sm">Con Espacio Neurona, una sala siempre abierta para entrar a preguntar una duda, charlar o trabajar acompañado.</p></div></div>
-      <div class="tile grow gift"><span class="gift-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><span class="gift-t">Eventos presenciales incluidos.</span><p class="copy sm"><span class="pend in">[PENDIENTE: «Dos» o «Tres»]</span> al año, sin pagar entrada. El próximo, el 6 de marzo en el Círculo de Bellas Artes de Madrid<span class="pend in">[PENDIENTE: añadir «, con Sergio Beguería entre los ponentes» solo cuando Jano confirme que hay permiso para usar su nombre]</span>: 160 plazas, por orden de reserva.</p></div></div>
+      <div class="tile grow gift"><div class="media gift-img"><img src="assets/consejo-direccion.jpg" alt="Mentoría en directo con Álex y Jano"></div><div class="gift-body"><span class="gift-t">Dos mentorías en directo al mes.</span><p class="copy sm">Traes el problema de tu clínica y te lo llevas resuelto, con Álex, Jano y un experto invitado.</p></div></div>
+      <div class="tile grow gift"><div class="media gift-img" style="background:#F7F8FB"><img src="assets/herramientas.jpg" alt="Videoteca y herramientas de la Academia FisioReferentes" style="object-fit:contain;background:#F7F8FB"></div><div class="gift-body"><span class="gift-t">Cursos y videoteca.</span><p class="copy sm">Formaciones cortas de marca personal, equipo, atención al paciente y liderazgo, con material nuevo cada trimestre.</p></div></div>
+      <div class="tile grow gift"><div class="media gift-img"><img src="assets/madrid-03.jpg" alt="Comunidad de FisioReferentes"></div><div class="gift-body"><span class="gift-t">Comunidad de unos 180 fisios dueños de clínica.</span><p class="copy sm">Con Espacio Neurona, una sala siempre abierta para entrar a preguntar una duda, charlar o trabajar acompañado.</p></div></div>
+      <div class="tile grow gift"><a class="video-frame yt-lite gift-img" href="https://www.youtube.com/watch?v=yq6pk-NQRTA" target="_blank" rel="noopener" data-id="yq6pk-NQRTA" data-title="Encuentro de FisioReferentes en el Círculo de Bellas Artes, Madrid 2026" aria-label="Reproducir el vídeo del encuentro en el Círculo de Bellas Artes" style="aspect-ratio:auto;border-radius:0;box-shadow:none"><img class="cover" src="assets/evento-bellas-artes.jpg" alt="Encuentro de FisioReferentes en el Círculo de Bellas Artes de Madrid"><span class="scrim"></span><span class="vsl-play" style="width:72px;height:72px"><svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a><div class="gift-body"><span class="gift-t">Eventos presenciales incluidos.</span><p class="copy sm"><span class="pend in">[PENDIENTE: «Dos» o «Tres»]</span> al año, sin pagar entrada. El próximo, el 6 de marzo en el Círculo de Bellas Artes de Madrid<span class="pend in">[PENDIENTE: añadir «, con Sergio Beguería entre los ponentes» solo cuando Jano confirme que hay permiso para usar su nombre]</span>: 160 plazas, por orden de reserva.</p></div></div>
     </div>
   </div>
 </section>
@@ -358,9 +374,12 @@ footer{padding-bottom:96px!important}
 <section id="bono" style="padding:0 0 120px">
   <div class="wrap">
     <div class="bono grow">
+      <div class="bono-txt">
       <span class="bono-tag">Súper bono para los 50 primeros</span>
       <h2 class="sec-h sm">Una sesión 1:1 con Álex o con Jano.</h2>
       <p class="copy" style="max-width:720px">45 minutos a solas para mirar tu clínica: dónde estás, qué te frena y cuál es tu siguiente paso. Fuera del Círculo esta sesión cuesta 300 €.</p>
+      </div>
+      <div class="media bono-img"><img src="assets/alex-jano-01.jpg" alt="Álex Vallés y Jano Cabello" style="object-fit:contain;background:#F3E6C2"></div>
     </div>
   </div>
 </section>
@@ -388,10 +407,47 @@ footer{padding-bottom:96px!important}
 <section id="testimonios" style="padding:120px 0">
   <div class="wrap" style="display:flex;flex-direction:column;gap:32px;align-items:center">
     <h2 class="sec-h reveal" style="text-align:center">Fisios que ya han pasado por aquí</h2>
-    <p class="pend reveal">[PENDIENTE: testimonios de Fer y Daisy. Fer con foto; Daisy sin foto. Jano pasa textos y fotos]</p>
-    <div class="grid2" style="width:100%">
-      <div class="tile grow ph-x" style="min-height:260px"><b>Tarjeta 1</b>Fer · con foto</div>
-      <div class="tile grow ph-x" style="min-height:260px"><b>Tarjeta 2</b>Daisy · sin foto</div>
+    <div class="grid2 t-heroes" style="width:100%">
+      <article class="tile grow t-hero">
+        <div class="media t-photo" style="height:300px"><img src="assets/testimonio-alumno.jpg" alt="Un alumno de FisioReferentes en su clínica" style="object-position:70% 50%"></div>
+        <div class="t-body">
+          <span class="eyebrow">Un alumno · 15 años con su clínica</span>
+          <div class="t-fig"><span class="t-big grad">+2.300 €</span></div>
+          <p class="t-sub">al mes, y la mitad de horas de consulta.</p>
+          <p class="copy sm">Intentó traspasar la clínica por 40.000 € y le dijeron que no. Contrató más gente y ganó el doble, porque antes arregló el precio.</p>
+          <div class="ba">
+            <div class="ba-row ba-head"><span></span><span class="a">Antes</span><span class="b">Previsión 2026</span></div>
+            <div class="ba-row"><span class="k">Facturación</span><span class="a">144.000 €</span><span class="b">~340.000 €</span></div>
+            <div class="ba-row"><span class="k">Sus horas de consulta</span><span class="a">40 h/sem</span><span class="b">18-20 h/sem</span></div>
+            <div class="ba-row"><span class="k">Equipo, además de él</span><span class="a">2 a media jornada</span><span class="b">4 a jornada completa</span></div>
+            <div class="ba-row"><span class="k">Lo que se lleva</span><span class="a">1.800 €/mes</span><span class="b">3.500 €/mes + colchón</span></div>
+          </div>
+          <div class="t-remate"><span class="t-remate-n">7 €</span><span><b>de margen por servicio, con la agenda llena.</b> Llenar la agenda no era el problema.</span></div>
+          <p class="t-quote">«Además de fisios, somos empresarios.»</p>
+        </div>
+      </article>
+      <article class="tile grow t-hero" style="animation-range:entry 10% entry 55%">
+        <div class="t-type" style="height:300px" aria-hidden="true">
+          <span class="t-type-a">2.220</span>
+          <span class="t-type-b">1.730</span>
+          <span class="t-type-l">sesiones al año</span>
+        </div>
+        <div class="t-body">
+          <span class="eyebrow">Una alumna · suelo pélvico, equipo de tres</span>
+          <div class="t-fig"><span class="t-big grad">+13.000 €</span></div>
+          <p class="t-sub">al año, con casi 500 sesiones menos.</p>
+          <p class="copy sm">Para el que mira el caso anterior y piensa «yo soy más pequeño» o «yo no quiero crecer». Ella no creció: cobró lo que vale.</p>
+          <div class="ba">
+            <div class="ba-row ba-head"><span></span><span class="a">Antes</span><span class="b">Previsión 2026</span></div>
+            <div class="ba-row"><span class="k">Facturación</span><span class="a">87.000 €</span><span class="b">100.000 €</span></div>
+            <div class="ba-row"><span class="k">Sesiones al año</span><span class="a">2.220</span><span class="b">1.730</span></div>
+            <div class="ba-row"><span class="k">Ingreso medio por sesión</span><span class="a">~39 €</span><span class="b">~58 €</span></div>
+            <div class="ba-row"><span class="k">Sus horas de consulta</span><span class="a">36 h, partida</span><span class="b">28-30 h, intensiva</span></div>
+            <div class="ba-row"><span class="k">Equipo</span><span class="a">3</span><span class="b">3</span></div>
+          </div>
+          <p class="t-quote">«Era un autoempleo que me ahogaba.»</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -440,9 +496,9 @@ footer{padding-bottom:96px!important}
   var m=u.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([\w-]{11})/), id=m?m[1]:(/^[\w-]{11}$/.test(u)?u:'');
   if(!id) return;
   var a=document.createElement('a');
-  a.className='video-frame'; a.href='https://www.youtube.com/watch?v='+id; a.target='_blank'; a.rel='noopener';
+  a.id='vsl'; a.className='video-frame'; a.href='https://www.youtube.com/watch?v='+id; a.target='_blank'; a.rel='noopener';
   a.setAttribute('aria-label','Reproducir el vídeo');
-  a.innerHTML='<img class="cover" src="https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg" alt=""><span class="scrim"></span><span class="vsl-play"><svg width="38" height="38" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>';
+  a.innerHTML='<img class="cover" src="'+(slot.getAttribute('data-cover')||('https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg'))+'" alt="Álex Vallés en el vídeo"><span class="scrim"></span><span class="vsl-play"><svg width="38" height="38" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>';
   a.addEventListener('click',function(e){
     e.preventDefault();
     var f=document.createElement('iframe');
@@ -454,6 +510,17 @@ footer{padding-bottom:96px!important}
   });
   slot.innerHTML=''; slot.appendChild(a);
 })();
+document.querySelectorAll('.yt-lite').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.id+'?autoplay=1&rel=0&modestbranding=1';
+    f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; web-share; fullscreen');
+    f.setAttribute('allowfullscreen','');
+    f.title=a.dataset.title||'Vídeo';
+    a.innerHTML=''; a.appendChild(f);
+  });
+});
 /* Animaciones de entrada y barra de progreso */
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
